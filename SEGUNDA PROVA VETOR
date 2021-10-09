@@ -1,0 +1,118 @@
+programa
+{
+	
+caracter c,ca, res2,vol
+	inteiro opcao, garcom[3],n = 0, v = 0, res = 0,com = 0, des = 0, total_com = 0, total_des = 0, total_valor
+	inteiro lista
+	funcao inicio()
+	{
+	
+		faca{
+			limpa()
+			escreva("* * * MOVIMENTAÇÂO DE CONTA BANCARIA * * *\n\n")
+
+			escreva("1 - Atualizar o garçom e valores ")
+			escreva("\n2 - comissões / Desconto ")
+			escreva("\n3 - Listagem atualizada sobre os garções ")
+			escreva("\n\nOpção escolhida: ")		
+			leia(opcao) 
+
+			se(opcao == 1){
+				limpa()
+				opcao1 ()
+			}
+			se(opcao == 2){
+				opcao2 ()
+			}
+			se(opcao == 3){
+				opcao3 ()
+			}		
+		
+		escreva("Deseja continuar?: ")
+		leia(c)
+			
+		}
+	enquanto (c == 's' ou c == 'S')
+	}
+		
+	funcao opcao1 (){
+		escreva("Digite o identificador do garçom: ")
+			leia (garcom[n])
+			lista = garcom[n]
+		escreva("\nDigite o valor inicial do dia: ")
+			leia (v)
+		escreva("\nDigite v ou V para voltar ao menu: ")
+			leia(ca)
+		se(ca == 'v' ou ca == 'V'){
+			inicio()
+		}enquanto(ca != 'V' ou ca != 'v'){
+			escreva("\nCaracter incorreto")
+			escreva("\nDigite v ou V para voltar ao menu: ")
+			leia(ca)
+				se(ca == 'v' ou ca == 'V'){
+					inicio()
+				}
+		}
+	}
+	funcao opcao2 (){
+		escreva("\nDeseja dar uma comissão(1) ou desconto(2) ou 99 para voltar ao MENU ?")
+		leia(res)
+
+		se (res == 1){
+			escreva("\nDigite o valor da comissão: ")
+			leia(com)		
+
+			escreva("\ndeseja dar outra comissão?: ")
+			leia(res2)
+
+			enquanto (res2 == 's' ou res2 == 'S'){
+				escreva("\nDigite o valor da comissão")
+				leia(com)	
+				escreva(" deseja voltar?: ")
+				leia(vol)
+					se( vol == 's' ou vol == 'S'){
+						opcao2()
+					}
+				
+			}
+			total_com = com + v
+			inicio()
+		}
+		se (res == 2){
+			escreva("\nDigite o valor do desconto")
+			leia(des)
+			
+			escreva("\ndeseja dar outro desconto?: ")
+			leia(res2)
+
+			enquanto (res2 == 's' ou res2 == 'S'){
+				escreva("\nDigite o valor do desconto: ")
+				leia(com)
+				escreva("\ndeseja voltar?: ")
+				leia(vol)
+					se( vol == 's' ou vol == 'S'){
+						opcao2()
+					}	
+			}
+
+			total_des = des - v
+		}
+		se (res == 99 ){
+			inicio()
+		}
+		total_valor = total_com - total_des		
+		
+	}
+	funcao opcao3 (){
+
+		para(inteiro x=0; x<=2; x++){
+			escreva("Gaçom ",x, " esta com o saldo de: ", total_valor,"\n")
+			
+		}
+		
+	}
+
+
+
+	
+}
